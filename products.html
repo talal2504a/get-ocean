@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - OceanGate Limited</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+  padding-top: 87px; /* adjust based on navbar height */
+}
+
+    /* Navbar basic design */
+    .navbar {
+      background-color: white; /* navbar ka color white */
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* halki si shadow neeche */
+      min-height: 60px;
+    }
+
+    /* OceanGate name styling */
+    .navbar-brand {
+      font-weight: bold;
+      color: #007bba !important; /* ocean blue color */
+      display: flex;
+      align-items: center;
+      margin-left: 120px;
+    }
+
+    /* "Limited" text small aur grey */
+    .brand-subtitle {
+      font-size: 0.7rem;
+      color: #777;
+      margin-top: -8px;
+    }
+
+    /* logo box design */
+    .logo-box {
+      width: 32px;
+      height: 32px;
+      background-color: #2596be;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+    }
+
+    .logo-box span {
+      background-color: white;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: block;
+    }
+
+    /* Right side menu links */
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      color: #0a0a23 !important;
+      margin-right: 15px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #007bba !important; /* hover pe blue */
+    }
+
+/* footer */
+.oceangate-footer {
+  background-color: #ffffff;
+  color: #0a1f33;
+  padding: 60px 0 30px;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+}
+
+.oceangate-footer h5,
+.oceangate-footer h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.oceangate-footer p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-list li {
+  margin-bottom: 6px;
+}
+
+.footer-list a {
+  color: #0a1f33;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-list a:hover {
+  color: #007bff;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 20px;
+}
+
+  </style>
+
+</head>
+<body>
+
+      <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="container-xxl">
+  <!-- 🔹 Navbar start -->
+  <nav class="navbar navbar-expand-xl fixed-top py-2">
+    <div class="container-fluid px-4">
+
+      <!-- 🔸 Left side logo and text -->
+      <a class="navbar-brand" href="checking.html">
+        <div class="logo-box"><span></span></div>
+        <div>
+          OceanGate <br>
+
+          <span class="brand-subtitle" >Limited</span>
+
+        </div>
+
+      </a>
+
+      <!-- 🔸 Mobile menu toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- 🔸 Right side menu -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="checking.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="support-center.html">Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="where-to-buy.html">Where to Buy</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+
+
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <!-- 🔹 Navbar end -->
+
+</div>
+
+<!-- Products Section -->
+<section id="products" class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <button id="back-to-home" class="btn btn-outline-primary mb-3">← Back to Home</button>
+    </div>
+    <h2 class="text-center mb-4">All Products</h2>
+    <p class="text-center mb-5 text-muted">Browse our complete range of data storage solutions designed for every requirement.</p>
+
+    <p class="text-center mb-4">Showing 8 products</p>
+
+    <!-- Category Filter -->
+    <div class="mb-4">
+      <h5>Filter by Category</h5>
+      <ul class="list-inline">
+        <li class="list-inline-item"><button class="btn btn-outline-primary filter-btn" data-filter="all">All</button></li>
+        <li class="list-inline-item"><button class="btn btn-outline-primary filter-btn" data-filter="compact-disks">Compact Disks</button></li>
+        <li class="list-inline-item"><button class="btn btn-outline-primary filter-btn" data-filter="optical-drives">Optical Drives</button></li>
+        <li class="list-inline-item"><button class="btn btn-outline-primary filter-btn" data-filter="storage-drives">Storage Drives</button></li>
+        <li class="list-inline-item"><button class="btn btn-outline-primary filter-btn" data-filter="portable-storage">Portable Storage</button></li>
+      </ul>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="row g-4">
+      <!-- Product 1 -->
+      <div class="col-md-6 col-lg-3" data-category="compact-disks">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2rem;"><img src="download.jpeg"alt="" style="width: 60px;"></span>
+            </div>
+            <h6 class="card-title">OceanGate Pro</h6>
+            <p class="card-subtitle mb-2 text-muted">CD-R 700MB</p>
+            <p class="card-text small">High-quality recordable CD for reliable data archival and backup</p>
+            <ul class="list-unstyled small">
+              <li>700MB Capacity</li>
+              <li>52x Write Speed</li>
+              <li>+2 more specs</li>
+            </ul>
+            <div class="mb-2">
+              <span class="badge bg-warning text-dark">4.8 (342 reviews)</span>
+            </div>
+            <p class="text-primary fw-bold">$0.50 - $2.00</p>
+            <button class="btn btn-outline-primary btn-sm">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-6 col-lg-3" data-category="compact-disks">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2rem;"><img src="Golden compact disc stock vector_ Illustration of multimedia - 10124050.jpeg" alt="" style="width: 60px;"></span>
+            </div>
+            <h6 class="card-title">OceanGate Pro</h6>
+            <p class="card-subtitle mb-2 text-muted">CDR-W 700MB</p>
+            <p class="card-text small">Rewritable CD for flexible data storage and backup solutions</p>
+            <ul class="list-unstyled small">
+              <li>700MB Capacity</li>
+              <li>32x Rewrite Speed</li>
+              <li>+2 more specs</li>
+            </ul>
+            <div class="mb-2">
+              <span class="badge bg-warning text-dark">4.7 (218 reviews)</span>
+            </div>
+            <p class="text-primary fw-bold">$1.50 - $3.50</p>
+            <button class="btn btn-outline-primary btn-sm">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-6 col-lg-3" data-category="optical-drives">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2rem;"><img src="gravador de dvd sata 24x 48x.jpeg" alt="" style="width: 60px;"></span>
+            </div>
+            <h6 class="card-title">OceanGate Drive</h6>
+            <p class="card-subtitle mb-2 text-muted">CD-ROM Drive 52X</p>
+            <p class="card-text small">High-speed CD-ROM drive for fast data access and media playback</p>
+            <ul class="list-unstyled small">
+              <li>52X Read Speed</li>
+              <li>IDE Interface</li>
+              <li>+2 more specs</li>
+            </ul>
+            <div class="mb-2">
+              <span class="badge bg-warning text-dark">4.9 (567 reviews)</span>
+            </div>
+            <p class="text-primary fw-bold">$45.00 - $85.00</p>
+            <button class="btn btn-outline-primary btn-sm">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="col-md-6 col-lg-3" data-category="optical-drives">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2rem;"><img src="gravador de dvd sata 24x 48x.jpeg" alt="" style="width: 60px;"></span>
+            </div>
+            <h6 class="card-title">OceanGate Drive</h6>
+            <p class="card-subtitle mb-2 text-muted">CD-ROM Drive 24X</p>
+            <p class="card-text small">Reliable mid-range CD-ROM drive for standard applications</p>
+            <ul class="list-unstyled small">
+              <li>24X Read Speed</li>
+              <li>IDE Interface</li>
+              <li>+2 more specs</li>
+            </ul>
+            <div class="mb-2">
+              <span class="badge bg-warning text-dark">4.6 (289 reviews)</span>
+            </div>
+            <p class="text-primary fw-bold">$35.00 - $60.00</p>
+            <button class="btn btn-outline-primary btn-sm">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="col-md-6 col-lg-3" data-category="storage-drives">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2rem;"><img src="Western Digital 1TB WD Blue PC Internal Hard Drive HDD - 7200 RPM, SATA 6 Gb_s, 64 MB Cache, 3_5_ - WD10EZEX.jpeg" alt="" style="width: 60px;"></span>
+            </div>
+            <h6 class="card-title">OceanGate Storage</h6>
+            <p class="card-subtitle mb-2 text-muted">HDD 1TB 7200RPM</p>
+            <p class="card-text small">High-capacity hard drive for desktop and enterprise applications</p>
+            <ul class="list-unstyled small">
+              <li>1TB Capacity</li>
+              <li>7200 RPM</li>
+              <li>+2 more specs</li>
+            </ul>
+            <div class="mb-2">
+              <span class="badge bg-warning text-dark">4.8 (1203 reviews)</span>
+            </div>
+            <p class="text-primary fw-bold">$45.00 - $75.00</p>
+            <button class="btn btn-outline-primary btn-sm">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="col-md-6 col-lg-3" data-category="storage-drives">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2rem;"><img src="Western Digital 1TB WD Blue PC Internal Hard Drive HDD - 7200 RPM, SATA 6 Gb_s, 64 MB Cache, 3_5_ - WD10EZEX.jpeg" alt="" style="width: 60px;"></span>
+            </div>
+            <h6 class="card-title">OceanGate Storage</h6>
+            <p class="card-subtitle mb-2 text-muted">HDD 500GB 5400RPM</p>
+            <p class="card-text small">Reliable storage solution for general-purpose computing</p>
+            <ul class="list-unstyled small">
+              <li>500GB Capacity</li>
+              <li>5400 RPM</li>
+              <li>+2 more specs</li>
+            </ul>
+            <div class="mb-2">
+              <span class="badge bg-warning text-dark">4.5 (421 reviews)</span>
+            </div>
+            <p class="text-primary fw-bold">$35.00 - $55.00</p>
+            <button class="btn btn-outline-primary btn-sm">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="col-md-6 col-lg-3" data-category="portable-storage">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2rem;"><img src="Kingston USB Flash Drives 8GB 16GB 32GB 64GB 128GB USB 3_0 Pen Drive high speed PenDrives DT100G3.jpeg" alt="" style="width: 60px;"></span>
+            </div>
+            <h6 class="card-title">OceanGate Portable</h6>
+            <p class="card-subtitle mb-2 text-muted">USB 3.0 Flash Drive 64GB</p>
+            <p class="card-text small">Fast and portable storage for on-the-go data transfer</p>
+            <ul class="list-unstyled small">
+              <li>64GB Capacity</li>
+              <li>USB 3.0</li>
+              <li>+2 more specs</li>
+            </ul>
+            <div class="mb-2">
+              <span class="badge bg-warning text-dark">4.7 (892 reviews)</span>
+            </div>
+            <p class="text-primary fw-bold">$15.00 - $25.00</p>
+            <button class="btn btn-outline-primary btn-sm">Details</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="col-md-6 col-lg-3" data-category="portable-storage">
+        <div class="card h-100">
+          <div class="card-body text-center">
+            <div class="mb-3">
+              <span style="font-size: 2rem;"><img src="Disque dur externe Portable Blueendless 750 Go_2 To USB2_0 HD Dispositifs de stockage Externo HDD.jpeg" alt="" style="width: 70px;"></span>
+            </div>
+            <h6 class="card-title">OceanGate Portable</h6>
+            <p class="card-subtitle mb-2 text-muted">External HDD 2TB</p>
+            <p class="card-text small">Large capacity external storage for backup and file transfer</p>
+            <ul class="list-unstyled small">
+              <li>2TB Capacity</li>
+              <li>USB 3.0</li>
+              <li>+2 more specs</li>
+            </ul>
+            <div class="mb-2">
+              <span class="badge bg-warning text-dark">4.8 (756 reviews)</span>
+            </div>
+            <p class="text-primary fw-bold">$55.00 - $85.00</p>
+            <button class="btn btn-outline-primary btn-sm">Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Need Help Section -->
+    <div class="text-center mt-5">
+      <h5>Need Help Choosing?</h5>
+      <p>Our expert team is ready to help you find the perfect storage solution</p>
+      <button class="btn btn-primary">Contact Sales</button>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+<footer id="footer" class="oceangate-footer">
+  <div class="container-fluid px-5">
+    <div class="row gy-4">
+
+      <!-- OceanGate Limited Info -->
+      <div class="col-lg-3 col-md-6">
+        <h5>OceanGate Limited</h5>
+        <p>Leading provider of data storage products and solutions for over 25 years.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-3 col-md-6">
+        <h6>Quick Links</h6>
+        <ul class="footer-list">
+          <li><a href="checking.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="col-lg-3 col-md-6">
+        <h6>Support</h6>
+        <ul class="footer-list">
+          <li><a href="support-center.html">Support Center</a></li>
+          <li><a href="where-to-buy.html">Where to Buy</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="about.html#faqs">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="col-lg-3 col-md-6">
+        <h6>Contact Us</h6>
+        <p>📍 OceanGate Limited Headquarters</p>
+        <p>📞 1-800-STORAGE</p>
+        <p>📧 info@oceangate.com</p>
+      </div>
+
+    </div>
+
+    <hr class="mt-4">
+
+    <div class="text-center copyright">
+      © 2023 OceanGate Limited. All rights reserved. | Excellence in Data Storage Since 2021.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('back-to-home').addEventListener('click', function() {
+    window.location.href = 'checking.html';
+  });
+
+  // Product filtering functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const products = document.querySelectorAll('.col-md-6.col-lg-3');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+
+      products.forEach(product => {
+        const category = product.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>

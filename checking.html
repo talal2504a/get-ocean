@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OceanGate Limited</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+  padding-top: 87px; /* adjust based on navbar height */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+    /* Navbar basic design */
+    .navbar {
+      background-color: rgba(255, 255, 255, 0.95); /* semi-transparent white */
+      backdrop-filter: blur(10px); /* glass effect */
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      min-height: 60px;
+      transition: all 0.3s ease;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* OceanGate name styling */
+    .navbar-brand {
+      font-weight: bold;
+      color: #007bba !important; /* ocean blue color */
+      display: flex;
+      align-items: center;
+      margin-left: 120px;
+    }
+
+    /* “Limited” text small aur grey */
+    .brand-subtitle {
+      font-size: 0.7rem;
+      color: #777;
+      margin-top: -8px;
+    }
+
+    /* logo box design */
+    .logo-box {
+      width: 32px;  
+      height: 32px;
+      background-color: #2596be;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+    }
+
+    .logo-box span {
+      background-color: white;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: block;
+    }
+
+    /* Right side menu links */
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      color: #0a0a23 !important;
+      margin-right: 15px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #007bba !important; /* hover pe blue */
+    }
+    
+  </style>
+  <style>
+  /* Hero Section Background */
+  #hero {
+    background-color: #e3f2fd; /* Light blue shade */
+    padding-top: 4rem;
+    padding-bottom: 8%;
+  }
+
+  /* Heading Style */
+  #hero h1 {
+    color: #000000; /* Bootstrap primary blue */
+    font-weight: bold;
+     padding-top: 4rem;
+     font-size: 60px;
+  }
+
+  /* Description Text */
+  #hero p {
+    color: #212529; /* Dark text */
+  }
+
+  /* Buttons */
+  /* #hero .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    width: 200px;
+
+  }
+
+  #hero .btn-outline-primary {
+    color: #0d6efd;
+    border-color: #1f53a2;
+  } */
+
+  /* Explore Products Button */
+#hero .btn-primary {
+  background-color: #228ec3;
+  border-color: #228ec3;
+  width: 200px;
+  
+}
+#hero .btn-primary:hover{
+  background-color: #1b719a; /* light blue or your custom color */
+  color: white;
+  border-color: #228ec3;
+}
+/* Learn More Button (Default) */
+#hero .btn-outline-primary {
+  color: #228ec3;
+  border-color: #228ec3;
+  background-color: transparent;
+  width: 200px;
+}
+
+/* Learn More Button (Hover) */
+#hero .btn-outline-primary:hover {
+  background-color: #1425323e; /* light blue or your custom color */
+  color: #228ec3;
+  border-color: #228ec3;
+
+}
+
+/* Learn More Button (Click/Focus) */
+#hero .btn-outline-primary:active,
+#hero .btn-outline-primary:focus {
+  background-color: #d0e4ff; /* even lighter blue */
+  color: #1f53a2;
+  border-color: #1f53a2;
+  box-shadow: none;
+}
+.card-box {
+  background-color: white; /* Blue background inside card */
+  border-radius: 24px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);/* Shadow behind card */
+  padding: 2rem;
+  text-align: center;
+  max-width: 320px;
+  margin: auto;
+}
+
+.hi_1 {
+  animation: shadowFlow 5s infinite alternate ease-in-out;
+  border-radius: 0.15rem;
+}
+
+.card-box.hi_1 {
+  box-shadow: none;
+}
+
+@keyframes shadowFlow {
+  0%   { box-shadow: 0 0 40px #228ec3; }
+  50%  { box-shadow: 0 0 50px #e3f2fd; }
+  100% { box-shadow: 0 0 40px #228ec3; }
+}
+
+/* Icon rows */
+.storage-item {
+  background-color:#eaf7fa ;
+  border-radius: 8px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Icon images */
+.storage-item img {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+/* Text beside icons */
+.storage-item span {
+  color: #212529;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.custom-icon {
+  color: #1b719a;
+  font-size: 1.8rem;
+}
+
+
+/* .why-choose-box {
+  background-color: #f8fafc;
+  padding: 100px;
+
+  text-align: center;
+
+}
+
+.why-choose-box h6 {
+  color: #000000;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 33px;
+} */
+
+.why-choose-section {
+  background-color: #f8fafc;
+  padding: 4rem 0;
+  border-radius: 16px;
+}
+.why-choose-section h3{
+  font-weight: 800;
+}
+.why-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+}
+
+.why-card h6 {
+  color: #1b719a;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.why-card p {
+  color: #212529;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: #228ec3;
+}
+/* 
+section 2 ka css */
+
+
+
+.product-categories {
+  background-color: white;
+}
+
+/* Our Product Categories ki heading */
+
+.custom-heading {
+  color: black;
+}
+
+
+.category-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-box {
+  background-color: #e3f2fd;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.icon-box i {
+  font-size: 1.5rem;
+  color: #228ec3;
+}
+
+.view-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #1b719a;
+  text-decoration: none;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+
+}
+
+/* Compact Disks ki heading ka colour  */
+.category-title {
+  color: black;
+  font-weight: 600;
+}
+ 
+
+
+ /* banner ki css */
+.stats-banner {
+  background: linear-gradient(to right, #007bba, #22b6e3);
+  padding: 3rem 0;
+  border-radius: 16px;
+  margin-top: 109px;
+
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* card 2 */
+
+/* .testimonials-section {
+  background-color: #e3f2fd; 
+
+} */
+
+.testimonials-section {
+  background-color: #f8fafc; /* Light blue */
+  width: 100vw;              /* Full viewport width */
+  margin-left: calc(-48vw + 47%); /* Remove container side gap */
+  padding: 8rem 0;
+}
+
+.testimonials-heading {
+  color: black; /* OceanGate blue */
+}
+
+.testimonial-card {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.stars {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+
+/* <!-- ready to close superior storage card --> */
+
+
+/* 
+.cta-section {
+  background-color: #ffffff;
+  padding-top: 100px;
+  
+} */
+.cta-section {
+  background-color: #ffffff;
+  min-height: 1vh; /* full screen height */
+  padding: 6rem 0;
+}
+
+.cta-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: black;
+}
+
+.cta-subheading {
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-buttons .btn {
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cta-buttons .btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.cta-buttons .btn-outline-primary {
+  border: 2px solid #007bff;
+  color: #007bff;
+  background-color: transparent;
+}
+
+.cta-buttons .btn:hover {
+  transform: translateY(-2px);
+}
+
+
+
+/* footer */
+.oceangate-footer {
+  background-color: #ffffff;
+  color: #0a1f33;
+  padding: 60px 0 30px;
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+}
+
+.oceangate-footer h5,
+.oceangate-footer h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.oceangate-footer p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-list li {
+  margin-bottom: 6px;
+}
+
+.footer-list a {
+  color: #0a1f33;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-list a:hover {
+  color: #007bff;
+}
+
+.copyright {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 20px;
+}
+
+</style>
+
+</head>
+<body>
+
+      <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+<div class="container-xxl">
+  <!-- 🔹 Navbar start -->
+  <nav class="navbar navbar-expand-xl fixed-top py-2">
+    <div class="container-fluid px-4">
+      
+      <!-- 🔸 Left side logo and text -->
+      <a class="navbar-brand" href="checking.html">
+        <div class="logo-box"><span></span></div>
+        <div>
+          OceanGate <br>
+          
+          <span class="brand-subtitle" >Limited</span>
+         
+        </div>
+        
+      </a>
+
+      <!-- 🔸 Mobile menu toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- 🔸 Right side menu -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="checking.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="support-center.html">Support</a></li>
+          <li class="nav-item"><a class="nav-link" href="where-to-buy.html">Where to Buy</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      
+
+
+
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <!-- 🔹 Navbar end -->
+  <!-- section  -->
+
+</div>
+<section id="hero" class="page-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1>Premium Data <br>Storage Solutions</h1>
+        <p>Trusted by businesses worldwide for over 3 years. OceanGate delivers <br>state-of-the-art storage devices with unmatched quality, reliability, and <br> performance.
+
+</p>
+        <a href="products.html" class="btn btn-primary me-2">Explore Products</a>
+        <a href="about.html" class="btn btn-outline-primary">Learn More</a>
+      </div>
+      <!-- card hy -->
+      <div class="col-md-6 ">
+        <!-- shadow -->
+  <div class="card-box hi_1 p-4 rounded text-center">  
+
+
+    <div class="storage-item mb-3">
+      <i class="fa-regular fa-hard-drive custom-icon me-2"></i>
+      <span>HDDs & SSDs</span>
+    </div>
+
+    <div class="storage-item mb-3">
+      
+     <i class="fa-solid fa-compact-disc custom-icon me-2 "></i>
+      
+      <span>Optical Media</span>
+    </div>
+
+    <p class="text-muted mt-3 mb-0">Complete range of storage solutions for every need.</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- why chose me  -->
+   
+ <section class="why-choose-section page-section mt-6">
+  <div class="container mt-4">
+    <h3 class="text-center mb-4">Why Choose OceanGate?</h3>
+    <p class="text-center mb-5 text-muted">We're committed to delivering excellence in every aspect of our business.</p>
+
+    <div class="row g-4">
+      <!-- Card 1: Quality Assurance -->
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card text-center p-4">
+          <i class="fas fa-shield-alt card-icon mb-3"></i>
+          <h6 style="color: black;">Quality Assurance</h6>
+          <p>State-of-the-art quality control ensures every product meets our high standards.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Fast Delivery -->
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card text-center p-4">
+          <i class="fas fa-truck-fast card-icon mb-3"></i>
+          <h6 style="color: black;">Fast Delivery</h6>
+          <p>Quick turnaround times and efficient logistics for timely product delivery.</p>
+        </div>
+      </div>
+
+      <!-- Card 3: Award Winning -->
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card text-center p-4">
+          <i class="fas fa-trophy card-icon mb-3"></i>
+          <h6 style="color: black;">Award Winning</h6>
+          <p>Recognized industry leader in data storage innovation and reliability.</p>
+        </div>
+      </div>
+
+      <!-- Card 4: Market Leader -->
+      <div class="col-md-6 col-lg-3">
+        <div class="why-card text-center p-4">
+          <i class="fas fa-chart-line card-icon mb-3"></i>
+          <h6 style="color: black;">Market Leader</h6>
+          <p>Growing market presence with expanding customer base across regions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section 2  -->
+<section class="product-categories page-section py-5">
+  <div class="container mt-5">
+    <h3 class="text-center fw-bold mb-4 custom-heading">Our Product Categories</h3>
+    <p class="text-center text-muted mb-5">
+      Browse our complete range of data storage solutions designed for every requirement.
+    </p>
+
+    <div class="row g-4">
+      <!-- Compact Disks -->
+      <div class="col-md-6 col-lg-3">
+        <div class="category-card p-4 text-center">
+          <div class="icon-box mb-3">
+            <i class="fas fa-compact-disc"></i>
+          </div>
+          <!-- <h6 class="fw-bold text-primary">Compact Disks</h6> -->
+           <h6 class="category-title">Compact Disks</h6>
+          <p class="text-muted small">High-quality CD-R, CD-RW media for reliable data storage.</p>
+          <a href="#" class="view-link">View Products →</a>
+        </div>
+      </div>
+
+      <!-- Storage Drives -->
+      <div class="col-md-6 col-lg-3">
+        <div class="category-card p-4 text-center">
+          <div class="icon-box mb-3">
+            <i class="fas fa-hard-drive"></i>
+          </div>
+          <h6 class="category-title">Storage Drives</h6>
+          <p class="text-muted small">Advanced HDD and SSD solutions for maximum performance and capacity.</p>
+          <a href="#" class="view-link">View Products →</a>
+        </div>
+      </div>
+
+      <!-- Optical Drives -->
+      <div class="col-md-6 col-lg-3">
+        <div class="category-card p-4 text-center">
+          <div class="icon-box mb-3">
+            <i class="fas fa-compact-disc"></i>
+          </div>
+          <h6 class="category-title">Optical Drives</h6>
+          <p class="text-muted small">Latest CD-ROM, DVD-ROM drives with high-speed performance.</p>
+          <a href="#" class="view-link">View Products →</a>
+        </div>
+      </div>
+
+      <!-- Portable Storage -->
+      <div class="col-md-6 col-lg-3">
+        <div class="category-card p-4 text-center">
+          <div class="icon-box mb-3">
+           <i class="fas fa-hard-drive"></i>
+          </div>
+          <h6 class="category-title">Portable Storage</h6>
+          <p class="text-muted small">Compact USB drives and external storage for on-the-go access.</p>
+          <a href="#" class="view-link">View Products →</a>
+        </div>
+      </div>
+    </div>
+  <!-- banner -->
+<section class="stats-banner page-section">
+  <div class="container">
+    <div class="row text-center text-white">
+      <div class="col-6 col-md-3 mb-4 mb-md-0">
+        <h2 class="stat-number">3+</h2>
+        <p class="stat-label">Years in Business</p>
+      </div>
+      <div class="col-6 col-md-3 mb-4 mb-md-0">
+        <h2 class="stat-number">500K+</h2>
+        <p class="stat-label">Happy Customers</p>
+      </div>
+      <div class="col-6 col-md-3 mb-4 mb-md-0">
+        <h2 class="stat-number">50+</h2>
+        <p class="stat-label">Product Lines</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h2 class="stat-number">24/7</h2>
+        <p class="stat-label">Customer Support</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- card 2  -->
+ 
+
+<section class="testimonials-section  page-section">
+  <div class="container">
+    <h2 class="testimonials-heading text-center fw-bold mb-3 ">Customer Testimonials </h2>
+    <p class="text-center text-muted mb-5 ">
+      What our satisfied customers are saying about OceanGate products.
+    </p>
+
+    <div class="row g-4">
+      <!-- Testimonial 1 -->
+      <div class="col-md-4">
+        <div class="testimonial-card p-4 bg-white rounded shadow-sm h-100">
+          <div class="stars mb-2 text-warning">★★★★★</div>
+          <p class="mb-3">"OceanGate products have been instrumental in our data management infrastructure. Excellent quality and reliable performance."</p>
+          <h6 class="fw-bold mb-0">maaz ahmed</h6>
+          <small class="text-muted">Tech Solutions Inc.</small>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="col-md-4">
+        <div class="testimonial-card p-4 bg-white rounded shadow-sm h-100">
+          <div class="stars mb-2 text-warning">★★★★★</div>
+          <p class="mb-3">"Fast delivery, competitive pricing, and attentive after-sales support. Highly recommended for any organization's storage needs."</p>
+          <h6 class="fw-bold mb-0">tonali dich</h6>
+          <small class="text-muted">Digital Enterprises</small>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="col-md-4">
+        <div class="testimonial-card p-4 bg-white rounded shadow-sm h-100">
+          <div class="stars mb-2 text-warning">★★★★★</div>
+          <p class="mb-3">"The product specifications and performance metrics are exactly as promised. Best storage provider we've worked with."</p>
+          <h6 class="fw-bold mb-0">Asim shah</h6>
+          <small class="text-muted">InfoTech Solutions</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ready to close superior storage card -->
+
+
+<section class="cta-section page-section text-center">
+  <div class="container">
+    <h2 class="cta-heading mb-3">Ready to Choose Superior Storage?</h2>
+    <p class="cta-subheading mb-4">
+      Explore our comprehensive product range and find the perfect storage solution for your needs. Our expert team is ready to assist you.
+    </p>
+    <div class="cta-buttons d-flex justify-content-center gap-3">
+      <a href="products.html" class="btn btn-primary px-4 py-2">Browse Products</a>
+      <a href="contact.html" class="btn btn-outline-primary px-4 py-2">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- footer -->
+
+<footer id="footer" class="oceangate-footer"> 
+  <div class="container-fluid px-5">
+    <div class="row gy-4">
+
+      <!-- OceanGate Limited Info -->
+      <div class="col-lg-3 col-md-6">
+        <h5>OceanGate Limited</h5>
+        <p>Leading provider of data storage products and solutions for over 25 years.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-3 col-md-6">
+        <h6>Quick Links</h6>
+        <ul class="footer-list">
+          <li><a href="checking.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div class="col-lg-3 col-md-6">
+        <h6>Support</h6>
+        <ul class="footer-list">
+          <li><a href="support-center.html">Support Center</a></li>
+          <li><a href="where-to-buy.html">Where to Buy</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="about.html#faqs">FAQs</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="col-lg-3 col-md-6">
+        <h6>Contact Us</h6>
+        <p>📍 OceanGate Limited Headquarters</p>
+        <p>📞 1-800-STORAGE</p>
+        <p>📧 info@oceangate.com</p>
+      </div>
+
+    </div>
+
+    <hr class="mt-4">
+
+    <div class="text-center copyright">
+      © 2023 OceanGate Limited. All rights reserved. | Excellence in Data Storage Since 2021.
+    </div>
+  </div>
+</footer>
+
+<!-- new page  -->
+
+
+</body>
+
+</html>
